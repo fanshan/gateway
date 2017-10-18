@@ -8,6 +8,7 @@ use ObjectivePHP\Events\EventsHandlerAwareTrait;
 use ObjectivePHP\Gateway\Entity\Entity;
 use ObjectivePHP\Gateway\Entity\EntityInterface;
 use ObjectivePHP\Gateway\Exception\GatewayException;
+use ObjectivePHP\Gateway\Model\ModelRegisterTrait;
 use ObjectivePHP\Gateway\Projection\ProjectionInterface;
 use Zend\Hydrator\ArraySerializable;
 use Zend\Hydrator\ClassMethods;
@@ -22,7 +23,7 @@ use Zend\Hydrator\NamingStrategyEnabledInterface;
  */
 abstract class AbstractGateway implements GatewayInterface, EventsHandlerAwareInterface
 {
-    use EventsHandlerAwareTrait;
+    use EventsHandlerAwareTrait, ModelRegisterTrait;
 
     const FETCH_ENTITIES   = 1;
     const FETCH_PROJECTION = 2;
